@@ -1,8 +1,0 @@
-[build]
-command = "ng build --configuration=production"
-publish = "dist/certificate-generator/browser"
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-type = 200
