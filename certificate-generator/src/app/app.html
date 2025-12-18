@@ -1,0 +1,16 @@
+<!-- Eu posso utilizar o if e for dentro do HTML da seguite maneira: -->
+<!-- @if () {} -> Isto vai mostrar para o utilizador se a condicao for verdadeira, dentro do {} colocamos o que queremos q o utilizador veja -->
+ <!--
+@if(mostrarNavbar){
+  <app-navbar/>
+}
+  -->
+<!-- Com a propriedade [hidden]="" ira trabalhar conforme a variavel que receber boolean -->
+<!-- <app-navbar [hidden]="mostrarNavbar"></app-navbar> -->
+<app-navbar></app-navbar>
+<app-base-ui>
+  <!-- 
+    this router-outlet is a component that will show the component that is currently active
+  -->
+  <router-outlet/>
+</app-base-ui>

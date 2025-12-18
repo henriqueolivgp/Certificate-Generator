@@ -1,0 +1,65 @@
+<!-- #form="ngForm" is equal to useRef in react for form state value in real time -->
+<!--  -->
+<form #form="ngForm" novalidate action="">
+  <app-pages-base>
+    <app-title-subtitle></app-title-subtitle>
+
+    <section class="custom-card w-100">
+      <h2>New Certificate</h2>
+      <section class="mb-3 costum-input-group">
+        <label [ngClass]="{'text-danger': InvalidField(nameRef)}" for="label-name">Name</label>
+        <!-- [(ngModel)]="name" is equal to useState in react for input state value in real time -->
+        <input
+          [(ngModel)]="certificate.name"
+          #nameRef="ngModel"
+          name="name"
+          maxlength="150"
+          required
+          type="text"
+          id="name"
+          class="form-control custom-input"
+          placeholder="Student name"
+        />
+        <!-- this if is validate the input  -->
+        @if(InvalidField(nameRef)) {
+          <app-error-message message="Name is required"></app-error-message>
+        }
+      </section>
+      <section class="mb-3 d-flex align-items-end">
+        <section class="flex-grow-1 me-2">
+          <label for="activity">Activity</label>
+          <input
+            [(ngModel)]="activity"
+            #activityRef="ngModel"
+            name="activity"
+            maxlength="50"
+            required
+            type="text"
+            id="activity"
+            class="form-control custom-input"
+            placeholder="Activity performed"
+          />
+        </section>
+        <app-secondary-button (click)="addActivity()" [disabled]="!activity || activity.length == 0" textButton="Add Activity" iconButton="ph-bold ph-plus"></app-secondary-button>
+      </section>
+      <section class="activity-group">
+        <label for="label-list">Activity List</label>
+        <section class="item-list w-100">
+          <!-- This is a for loop in angular is equal to map in react -->
+          @for(activity of certificate.activities; track $index) {
+          <section class="item">
+            <span class="item-text">{{ activity }}</span>
+            <section (click)="removeActivity($index)">
+              <i class="ph-bold ph-x remove-btn"></i>
+            </section>
+          </section>
+          <!-- When the index is not the last item then add a horizontal line -->
+          @if($index + 1 != certificate.activities.length) {
+          <hr />
+          } }
+        </section>
+      </section>
+      <app-primary-button (click)="submitForm()" [disabled]="!ValidForm()" textButton="Generate Certificate"></app-primary-button>
+    </section>
+  </app-pages-base>
+</form>

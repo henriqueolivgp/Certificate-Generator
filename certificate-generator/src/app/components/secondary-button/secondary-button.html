@@ -1,0 +1,6 @@
+<button [ngStyle]="disabled ? {'opacity': '50%', 'cursor': 'not-allowed'} : {}" class="costum-button">
+  @if(iconButton){
+    <i class="{{ iconButton }}"></i>
+  }
+  {{ textButton }}
+</button>

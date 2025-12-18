@@ -1,0 +1,42 @@
+<section class="d-flex flex-column align-items-center">
+  <section class="d-flex w-100 justify-content-between align-items-center my-certificate">
+    <section routerLink="/" class="d-flex align-items-center btn-voltar">
+      <i class="ph ph-arrow-left"></i>
+      <p class="m-0">Voltar</p>
+    </section>
+    <app-secondary-button
+      (click)="downloadCertificate()"
+      textButton="Download"
+      iconButton="ph-bold ph-download"
+    ></app-secondary-button>
+  </section>
+
+  @if(certificate){
+
+    <section #containerCertificate class="certificate d-flex justify-content-center align-items-center">
+      <img class="medal-icon" src="certificate/Certificate_Ribbon.png" alt="medal-icon" />
+      <section class="certificate-content">
+        <img
+          class="certificate-signature"
+          src="certificate/Certificate_Signature.svg"
+        alt="certificate-signature"
+      />
+      <section class="certificate-info d-flex flex-column align-items-center">
+        <section class="certificate-title-subtitle">
+          <h1>CERTIFICATE OF COMPLETION</h1>
+          <p>This certificate proves that</p>
+        </section>
+        <p class="student-name">{{certificate.name}}</p>
+        <section class="activity-list-group">
+          <p class="activity-list-title">Successfully completed the following activities:</p>
+          <p class="activity-list">
+            {{certificate.activities.join(', ')}}
+          </p>
+        </section>
+      </section>
+      <p class="emitted-date">Emitido em {{certificate.emitDate}}</p>
+      </section>
+    </section>
+
+  }
+</section>

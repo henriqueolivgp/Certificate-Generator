@@ -1,0 +1,22 @@
+.costum-button {
+  height: 40px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #fff;
+  background: #1A2856;
+  cursor: pointer;
+  font-weight: 600;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+} 
+
+.costum-button:hover {
+  opacity: 90%;
+}
+
+.costum-button i {
+  font-size: 20px;
+}

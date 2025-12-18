@@ -1,0 +1,30 @@
+<app-pages-base>
+  <app-title-subtitle></app-title-subtitle>
+
+  @if(certificates.length == 0){
+
+  <section class="custom-card w-100">
+    <i class="ph ph-certificate"></i>
+    <section class="custom-warning-titles">
+      <h3 class="card-title">Generated Certified</h3>
+      <p class="card-subtitle">Generate certificates for your certificate list</p>
+    </section>
+    <app-secondary-button
+      routerLink="/certificates/new"
+      textButton="Generate Certificate"
+    ></app-secondary-button>
+  </section>
+  } 
+  
+  @if(certificates.length > 0){
+    <section class="list-certificates w-100">
+    @for(certificate of certificates; track $index){
+      <app-certied-item
+        [studentName]="certificate.name"
+        [emitDate]="certificate.emitDate"
+        [id]="certificate.id"
+      ></app-certied-item>
+    }
+    </section>
+  }
+</app-pages-base>

@@ -1,0 +1,85 @@
+.custom-card {
+  max-width: 672px;
+  gap: 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 32px;
+}
+
+.title {
+  font-weight: 700px;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #1a2856;
+  margin-bottom: 20px;
+}
+
+.activity-group {
+  margin-bottom: 32px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #1a2856;
+}
+
+.item-list {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 12px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-list hr {
+  all: unset;
+  display: block;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 12px 0;
+}
+
+.remove-btn {
+  padding: 5.75px;
+  color: #e95f5f;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #e2e8f0;
+  border-radius: 4px;
+}
+
+.custom-input-group {
+  margin-bottom: 20px !important;
+}
+
+.custom-input {
+  height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.custom-input:focus {
+  border: 1px solid #3B5AC2;
+  box-shadow: none;
+}
+/* Aqui e uma forma de selecionar um elemento pai que possui um filho com um estado de foco */
+.custom-input-group:has(input:focus) {
+  border: 1px solid #3B5AC2;
+}
+
+.text-danger-label {
+  color: #d71d1d;
+}

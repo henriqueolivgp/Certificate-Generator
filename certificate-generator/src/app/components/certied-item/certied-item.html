@@ -1,0 +1,12 @@
+<section class="card p-3 custom-card">
+  <section class="d-flex justify-content-between align-items-center">
+    <section>
+      <section class="fw-bold nome-utilizador">
+        {{studentName}}
+      </section>
+      <small class="small-date">Generated on {{emitDate}}</small>
+    </section>
+    <!-- for dynamic id we use the [routerLink] binding to pass the id -->
+    <app-secondary-button (click)="navigateToCertificate()" textButton="View Certificate" iconButton="ph-bold ph-eye"></app-secondary-button>
+  </section>
+</section>
